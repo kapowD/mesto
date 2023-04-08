@@ -1,0 +1,200 @@
+/* .page {
+    background-color: #000000;;
+    color: #fff;
+    margin: 0 auto;
+    width: 100%;
+    font-family: 'Inter', sans-serif, Arial, Helvetica;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  } */
+.page {
+  /* display: flex; */
+  max-width: 880px;
+  min-width: 320px;
+  margin: 0 auto;
+  line-height: 0;
+  background-color: black;
+  color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  padding: 45px 0 0;
+  border-bottom: 1px #545454 solid;
+  transition: all .5s ease;
+}
+
+.header__logo {
+  max-width: 142px;
+  object-fit: contain;
+  object-position: left;
+  max-height: 100%;
+  padding-bottom: 41px;
+  transition: all .5s ease;
+}
+
+.profile {
+  display: grid;
+  grid-template-columns: 120px minmax(0, auto) minmax(50px, 150px);
+  gap: 30px;
+  padding: 40px 0 51px;
+}
+
+.profile__avatar {
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile__info {
+  max-width: 336px;
+  align-self: center;
+}
+
+.profile__name-container {
+  display: flex;
+  max-width: min-content;
+  gap: 18px;
+  transition: all .5s ease;
+}
+
+.profile__name {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin: 0;
+  padding: 0 0 12px;
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 48px;
+  transition: all .5s ease;
+}
+
+.profile__edit-button {
+  min-width: 24px;
+  min-height: 24px;
+  align-self: center;
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0 0 6px;
+  background-color: unset;
+  background-image: url(../images/edit-icon.svg );
+  background-size: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px white solid;
+  opacity: 1;
+  transition: opacity .15s ease, all .5s ease;
+}
+
+.profile__description {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  transition: all .5s ease;
+}
+
+.profile__add-button {
+  align-self: center;
+  min-height: 50px;
+  background-color: unset;
+  background-image: url(/images/add-icon.svg);
+  background-size: 22px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 2px white solid;
+  border-radius: 2px;
+  padding: 0;
+  box-sizing: border-box;
+  opacity: 1;
+  transition: opacity .15s ease, all .5s ease;
+}
+
+.elements {
+  display: grid;
+  grid-template-columns: repeat(3, 282px);
+  row-gap: 20px;
+  column-gap: 17px;
+  justify-content: center;
+}
+
+.element {
+  position: relative;
+  background-color: #fff;
+  border-radius: 10px;
+  width: 282px;
+  box-sizing: border-box;
+}
+
+.element__photo {
+  object-fit: cover;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  cursor: pointer;
+}
+
+.element__description {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 25px 15px 31px 21px;
+}
+
+.element__title {
+  font-family: 'Inter', 'Arial', 'Helvetica', sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  margin: 0;
+  max-width: 85%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #000000;
+}
+
+.element__like-button {
+  border: none;
+  background: url(/images/like-icon.svg) center no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  height: 19px;
+  width: 22px;
+  opacity: 1;
+  padding: 0;
+  transition: opacity 0.5s;
+}
+
+.footer {
+  width: 100%;
+  padding: 66px 0 60px;
+  box-sizing: border-box;
+}
+
+
+.footer__text {
+  color: #545454;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  transition: all .5s ease;
+}
