@@ -1,0 +1,18 @@
+.profile__name-container {
+    display: flex;
+    max-width: min-content;
+    gap: 18px;
+}
+@media screen and (max-width: 768px) {
+    .profile__name-container {
+        margin: 0 auto;
+        padding: 26px 0 10px;
+        gap: 10px
+    }   
+}
+
+@media screen and (max-width: 480px) {
+    .profile__name-container {
+        gap: 10px;
+    }   
+}

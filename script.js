@@ -7,7 +7,6 @@ let description = document.querySelector('.profile__description');
 let profileName = document.querySelector('.profile__name');
 let closeProfile = document.querySelector('.pop-up__exit');
 
-//открытие поп апа
 editProfile.addEventListener('click', function () {
     popup.classList.add('pop-up__opened');
     myName.value = profileName .textContent;

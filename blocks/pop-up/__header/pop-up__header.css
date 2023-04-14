@@ -1,0 +1,18 @@
+.pop-up__header {
+  color: #000000;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 29px;
+  margin: 0;
+  padding-bottom: 52px;
+  box-sizing: border-box;
+  transition: all .5s ease;
+}
+
+@media screen and (max-width: 768px) {
+  .pop-up__header {
+    font-size: 18px;
+    line-height: 22px;
+    padding-bottom: 75px;
+  }
+}
