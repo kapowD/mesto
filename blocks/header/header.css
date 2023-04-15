@@ -2,7 +2,7 @@
     display: flex;
     width: 100%;
     padding: 45px 0 0;
-    border-bottom: 1px #545454 solid;
+    border-bottom: 1px rgba(84, 84, 84, .7) solid;
     transition: all .5s ease;
 }
 

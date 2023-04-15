@@ -14,7 +14,7 @@
 }
 
 .pop-up__exit:hover {
-    opacity: .5;
+    opacity: .6;
 }
 @media screen and (max-width: 768px) {
     .pop-up__exit {

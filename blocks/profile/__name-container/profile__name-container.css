@@ -10,9 +10,3 @@
         gap: 10px;
     }   
 }
-
-@media screen and (max-width: 480px) {
-    .profile__name-container {
-        gap: 10px;
-    }   
-}
