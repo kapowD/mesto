@@ -7,7 +7,7 @@ let popupSave = document.querySelector('.pop-up__edit')
 let profileDescription = document.querySelector('.profile__description');
 let profileName = document.querySelector('.profile__name');
 let popupClose = document.querySelector('.pop-up__exit');
-
+let avatar = document.querySelector('.profile__avatar');
 
 function openPopup(editPopup){
     editPopup.classList.add('pop-up_opened');
@@ -33,3 +33,6 @@ function handleFormSubmit(evt) {
     closePopup(popup);
 }
 editor.addEventListener('submit', handleFormSubmit);
+
+
+openPopup(avatar);
