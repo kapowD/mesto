@@ -1,4 +1,12 @@
 .element__like-button_active {
+    border: none;
     background-image: url(../../../../images/like-icon-active.svg);
+    background-size: cover;
+    background-color: unset;
     cursor: pointer;
+    height: 19px;
+    width: 22px;
+    opacity: 1;
+    padding: 0;
+    transition: 0.5s ease;
 }

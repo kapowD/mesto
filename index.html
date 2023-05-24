@@ -25,8 +25,12 @@
       <button type="button" class="profile__add-button"></button>
     </section>
     <section class="elements">
-      <article class="element">
+
+
+
+      <!-- <article class="element">
         <img class="element__photo" src="images/element-karachevsk.jpg" alt="Карачевск">
+        <button type="button" class="element__delete-button"></button>
         <div class="element__description">
           <h2 class="element__title">Карачевск</h2>
           <button class="element__like-button" type="button"></button>
@@ -55,6 +59,7 @@
       </article>
       <article class="element">
         <img class="element__photo" src="images/element-elbrus.png" alt="Карачевск">
+        
         <div class="element__description">
           <h2 class="element__title">Гора Эльбрус overflow-test</h2>
           <button class="element__like-button" type="button"></button>
@@ -66,7 +71,7 @@
           <h2 class="element__title">Домбай overflow-test</h2>
           <button class="element__like-button" type="button"></button>
         </div>
-      </article>
+      </article> -->
 
     </section>
   </main>
@@ -84,6 +89,31 @@
       </form>
     </div>
   </div>
+  
+  <div class="pop-up">
+    <div class="pop-up__container">
+      <button class="pop-up__exit" type="button"></button>
+      <form class="form" name="editor" method="post">
+        <h2 class="pop-up__header">Редактировать профиль</h2>
+        <input class="pop-up__input pop-up__input_type_place" placeholder="Имя" name="Название" type="text">
+        <input class="pop-up__input pop-up__input_type_link" placeholder="Ссылка на картинку" name="about" type="url">
+        <button class="pop-up__edit" type="submit">Сохранить</button>
+      </form>
+    </div>
+  </div>
+
+
+  <template id="elements-tameplate">
+    <article class="element">
+      <img alt="" class="element__photo element__popup-open">
+      <button type="button" class="element__delete-button"></button>
+      <div class="element__description">
+        <h2 class="element__title"></h2>
+        <button type="button" class="element__like-button"></button>
+      </div>
+    </article>
+  </template>
+  
   <script src="./script/index.js"></script>
 </body>
 
