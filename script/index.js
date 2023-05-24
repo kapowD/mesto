@@ -1,30 +1,31 @@
+const elementTemplate = document.getElementById('elements-tameplate').content;
+const elementsContainer = document.querySelector('.elements');
+
 const editProfile = document.querySelector('.profile__edit-button');
 const addCard = document.querySelector('.profile__add-button')
 
 const popup = document.querySelector('.pop-up');
 const editor = document.querySelector('.form');
-// const popupEdit = document.querySelector('.pop-up-edit');
-// const popupAdd = document.querySelector('.pop-up-add');
+
+const popupEdit = document.querySelector('.pop-up-edit');
+const popupAdd = document.querySelector('.pop-up-add');
+
 const inputName = document.querySelector('.pop-up__input_type_name');
 const inputDescription = document.querySelector('.pop-up__input_type_description');
 const popupSave = document.querySelector('.pop-up__edit')
 const profileDescription = document.querySelector('.profile__description');
 const profileName = document.querySelector('.profile__name');
 const popupClose = document.querySelector('.pop-up__exit');
-const avatar = document.querySelector('.profile__avatar');
 
 
 
-const elementTemplate = document.getElementById('elements-tameplate').content;
-console.log(elementTemplate);
-const elementsContainer = document.querySelector('.elements');
-console.log(elementsContainer);
+
 
 
 
 
 function openPopup(editPopup) {
-    editPopup.classList.add('pop-up_opened');
+    editPopup.classList.add('pop-up_opened'); //общая функция открытия попапа
 }
 
 function closePopup(editPopup) {
@@ -49,7 +50,7 @@ function handleFormSubmit(evt) {
 editor.addEventListener('submit', handleFormSubmit);
 
 
-openPopup(avatar);
+
 
 const initialCards = [
     {
@@ -123,7 +124,7 @@ initialCards.forEach((card) => {
     renderCardElement(element);
 });
 
-addCard.addEventListener('click', function(){
+addCard.addEventListener('click', () =>{
     openPopup(popup);
 })
 
