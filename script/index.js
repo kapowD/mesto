@@ -1,9 +1,10 @@
 const editProfile = document.querySelector('.profile__edit-button');
-
 const addCard = document.querySelector('.profile__add-button')
 
 const popup = document.querySelector('.pop-up');
 const editor = document.querySelector('.form');
+// const popupEdit = document.querySelector('.pop-up-edit');
+// const popupAdd = document.querySelector('.pop-up-add');
 const inputName = document.querySelector('.pop-up__input_type_name');
 const inputDescription = document.querySelector('.pop-up__input_type_description');
 const popupSave = document.querySelector('.pop-up__edit')
@@ -13,10 +14,11 @@ const popupClose = document.querySelector('.pop-up__exit');
 const avatar = document.querySelector('.profile__avatar');
 
 
+
 const elementTemplate = document.getElementById('elements-tameplate').content;
 console.log(elementTemplate);
 const elementsContainer = document.querySelector('.elements');
-
+console.log(elementsContainer);
 
 
 
@@ -77,9 +79,9 @@ const initialCards = [
 ];
 //
 const createElement = (el) => {
-    // const cardElement = elementTemplate.content.querySelector('.element').cloneNode(true);
-    const cardElement = elementTemplate.cloneNode(true);
-
+    const cardElement = elementTemplate.querySelector('.element').cloneNode(true);
+    // const cardElement = elementTemplate.cloneNode(true);
+    
     const titleElement = cardElement.querySelector('.element__title')
     const imageElement = cardElement.querySelector('.element__photo');
 
@@ -93,14 +95,14 @@ const createElement = (el) => {
     const likeButton = cardElement.querySelector('.element__like-button');
 
 
-    const handleDelete = (evt) => {
-        console.log(evt);
-        titleElement.remove();
-        
+    const handleDelete = () => {
+        console.log(':-)');
+        cardElement.remove();
     };
 
     const handleLike = () => {
-        likeButton.classList.toggle('.element__like-button_active');
+        console.log(':-)');
+        likeButton.classList.toggle('element__like-button_active');
     };
 
  
@@ -121,7 +123,9 @@ initialCards.forEach((card) => {
     renderCardElement(element);
 });
 
-
+addCard.addEventListener('click', function(){
+    openPopup(popup);
+})
 
 
 //
