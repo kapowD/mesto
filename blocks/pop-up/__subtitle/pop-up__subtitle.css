@@ -1,0 +1,9 @@
+.pop-up__subtitle {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: white;
+    padding-top: 10px;
+    margin: 0;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+}

@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="pages/index.css">
   <title>Mesto</title>
 </head>
-
 <body class="page">
   <header class="header">
     <img class="header__logo" alt="Логотип Mesto" src="./images/logo.svg">
@@ -25,54 +24,6 @@
       <button type="button" class="profile__add-button"></button>
     </section>
     <section class="elements">
-
-
-
-      <!-- <article class="element">
-        <img class="element__photo" src="images/element-karachevsk.jpg" alt="Карачевск">
-        <button type="button" class="element__delete-button"></button>
-        <div class="element__description">
-          <h2 class="element__title">Карачевск</h2>
-          <button class="element__like-button" type="button"></button>
-        </div>
-      </article>
-      <article class="element">
-        <img class="element__photo" src="images/element-elbrus.png" alt="Карачевск">
-        <div class="element__description">
-          <h2 class="element__title">Гора Эльбрус</h2>
-          <button class="element__like-button" type="button"></button>
-        </div>
-      </article>
-      <article class="element">
-        <img class="element__photo" src="images/element-dombay.png" alt="Карачевск">
-        <div class="element__description">
-          <h2 class="element__title">Домбай</h2>
-          <button class="element__like-button" type="button"></button>
-        </div>
-      </article>
-      <article class="element">
-        <img class="element__photo" src="images/element-karachevsk.jpg" alt="Карачевск">
-        <div class="element__description">
-          <h2 class="element__title">Карачевск overflow-test</h2>
-          <button class="element__like-button" type="button"></button>
-        </div>
-      </article>
-      <article class="element">
-        <img class="element__photo" src="images/element-elbrus.png" alt="Карачевск">
-        
-        <div class="element__description">
-          <h2 class="element__title">Гора Эльбрус overflow-test</h2>
-          <button class="element__like-button" type="button"></button>
-        </div>
-      </article>
-      <article class="element">
-        <img class="element__photo" src="images/element-dombay.png" alt="Карачевск">
-        <div class="element__description">
-          <h2 class="element__title">Домбай overflow-test</h2>
-          <button class="element__like-button" type="button"></button>
-        </div>
-      </article> -->
-
     </section>
   </main>
   <footer class="footer">
@@ -80,32 +31,29 @@
   </footer>
   <div class="pop-up pop-up-edit">
     <div class="pop-up__container">
-      <button class="pop-up__exit" type="button"></button>
+      <button type="button" class="pop-up__exit"></button>
       <form class="form-edit" name="editor" method="post">
         <h2 class="pop-up__header">Редактировать профиль</h2>
-        <input class="pop-up__input pop-up__input_type_name" placeholder="Имя" name="name" type="text">
-        <input class="pop-up__input pop-up__input_type_description" placeholder="О себе" name="about" type="text">
+        <input type="text" class="pop-up__input pop-up__input_type_name" placeholder="Имя" name="name">
+        <input type="text" class="pop-up__input pop-up__input_type_description" placeholder="О себе" name="about">
         <button class="pop-up__edit" type="submit">Сохранить</button>
       </form>
     </div>
   </div>
-  
   <div class="pop-up pop-up-add">
     <div class="pop-up__container">
-      <button class="pop-up__exit" type="button"></button>
+      <button type="button" class="pop-up__exit"></button>
       <form class="form-add" name="editor" method="post">
         <h2 class="pop-up__header">Новое место</h2>
-        <input class="pop-up__input pop-up__input_type_place" placeholder="Имя" name="Название" type="text">
-        <input class="pop-up__input pop-up__input_type_link" placeholder="Ссылка на картинку" name="about" type="url">
+        <input type="text" class="pop-up__input pop-up__input_type_place" placeholder="Имя" name="Название">
+        <input type="url" class="pop-up__input pop-up__input_type_link" placeholder="Ссылка на картинку" name="about">
         <button class="pop-up__edit" type="submit"> Создать</button>
       </form>
     </div>
   </div>
-
-
   <template id="elements-tameplate">
     <article class="element">
-      <img alt="" class="element__photo element__popup-open">
+      <img alt="" class="element__photo element__image-open">
       <button type="button" class="element__delete-button"></button>
       <div class="element__description">
         <h2 class="element__title"></h2>
@@ -113,8 +61,14 @@
       </div>
     </article>
   </template>
-  
-  <script src="./script/index.js"></script>
+  <div class="pop-up pop-up-image">
+    <div class="pop-up__image-container">
+            <button class="pop-up__exit" type="button"></button>
+            <img class="pop-up__image" alt="Попап изображения с краточки">
+            <p class="pop-up__subtitle"></p>
+    </div>
+  </div>
+  <script src="./script/index.js" type="module"></script>
 </body>
 
 </html>

@@ -12,3 +12,6 @@
     opacity: 1;
     padding: 0;
 }
+.element__delete-button:hover{
+    opacity: 0.6;
+}
