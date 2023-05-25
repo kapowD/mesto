@@ -4,17 +4,22 @@ const elementsContainer = document.querySelector('.elements');
 const editProfile = document.querySelector('.profile__edit-button');
 const addCard = document.querySelector('.profile__add-button')
 
-const popup = document.querySelector('.pop-up');
-const editor = document.querySelector('.form');
+// const popup = document.querySelector('.pop-up-edit');
 
 const popupEdit = document.querySelector('.pop-up-edit');
-const popupAdd = document.querySelector('.pop-up-add');
+const profileEditor = popupEdit.querySelector('.form-edit');
+const inputName = popupEdit.querySelector('.pop-up__input_type_name');
+const inputDescription = popupEdit.querySelector('.pop-up__input_type_description');
 
-const inputName = document.querySelector('.pop-up__input_type_name');
-const inputDescription = document.querySelector('.pop-up__input_type_description');
+const popupAdd = document.querySelector('.pop-up-add');
+const addCardEditor = popupAdd.querySelector('.form-edit');
+const inputPlace = popupAdd.querySelector('.pop-up__input_type_place');
+const inputLink = popupAdd.querySelector('.pop-up__input_type_link');
+
 const popupSave = document.querySelector('.pop-up__edit')
 const profileDescription = document.querySelector('.profile__description');
 const profileName = document.querySelector('.profile__name');
+
 const popupClose = document.querySelector('.pop-up__exit');
 
 
@@ -32,22 +37,23 @@ function closePopup(editPopup) {
     editPopup.classList.remove('pop-up_opened');
 }
 
+
 editProfile.addEventListener('click', function () {
-    openPopup(popup);
+    openPopup(popupEdit);
     inputName.value = profileName.textContent;
     inputDescription.value = profileDescription.textContent;
 
 })
 popupClose.addEventListener('click', function () {
-    closePopup(popup);
+    closePopup(popupEdit);
 })
 function handleFormSubmit(evt) {
     evt.preventDefault();
     profileName.textContent = inputName.value;
     profileDescription.textContent = inputDescription.value;
-    closePopup(popup);
+    closePopup(popupEdit);
 }
-editor.addEventListener('submit', handleFormSubmit);
+profileEditor.addEventListener('submit', handleFormSubmit);
 
 
 
@@ -81,59 +87,56 @@ const initialCards = [
 //
 const createElement = (el) => {
     const cardElement = elementTemplate.querySelector('.element').cloneNode(true);
-    // const cardElement = elementTemplate.cloneNode(true);
-    
     const titleElement = cardElement.querySelector('.element__title')
     const imageElement = cardElement.querySelector('.element__photo');
-
     titleElement.textContent = el.name;
     imageElement.src = el.link;
     imageElement.alt = el.name;
-   
-    
-//
     const deleteButton = cardElement.querySelector('.element__delete-button');
     const likeButton = cardElement.querySelector('.element__like-button');
-
-
     const handleDelete = () => {
-        console.log(':-)');
         cardElement.remove();
     };
-
     const handleLike = () => {
-        console.log(':-)');
         likeButton.classList.toggle('element__like-button_active');
     };
-
- 
-
     deleteButton.addEventListener('click', handleDelete);
     likeButton.addEventListener('click', handleLike);
-//
     return cardElement;
 };
+
+
 
 const renderCardElement = (cardElement) => {
     elementsContainer.prepend(cardElement);
 };
 
 initialCards.forEach((card) => {
-
-    const element = createElement(card);
-    renderCardElement(element);
+    renderCardElement(createElement(card));
 });
 
-addCard.addEventListener('click', () =>{
-    openPopup(popup);
-})
 
 
-//
-// const deleteButton = (evt) => {
-//     const delItem = evt.target.closest('.element');
-//     delItem.remove();
-// }
+
+
+addCard.addEventListener('click', () => openPopup(popupAdd));
+
+function handleAddSubmit(event) {
+    event.preventDefault();
+    const name = inputPlace.value;
+    const link = inputLink.value;
+    const newPlaceItem = {
+        name,
+        link,
+    };
+    renderCardElement(createElement(newPlaceItem));
+    closePopup(popupAdd);
+    event.target.reset();
+};
+
+addCardEditor.addEventListener('submit', handleAddSubmit); // он опять ничего не видит и не принимает велью (кнопки закрытия я еще не прикрутил)
+
+
 
 
 
