@@ -7,17 +7,17 @@
     line-height: 22px;
     text-align: center;
     padding: 14px 0;
-    margin: 45px 0 0;
+    margin: 20px 0 0;
     border: none;
     border-radius: 2px;
     box-sizing: border-box;
     opacity: 1;
     transition: .5s ease;
+    cursor: pointer;
 }
 
 .pop-up__edit:hover {
-    background-color: rgba(0, 0, 0, .8);
-    cursor: pointer;
+    opacity: .8;
 }
 
 @media screen and (max-width: 768px) {
@@ -26,3 +26,5 @@
         line-height: 17px;
     }
 }
+
+
