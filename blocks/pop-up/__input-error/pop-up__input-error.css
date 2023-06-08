@@ -4,11 +4,16 @@
     font-size: 12px;
     line-height: 15px;
     color: #FF0000;
-    margin-left: 36px;
     min-height: 30px;
     margin: 0;
     width: 358px;
     padding: 0;
-    font-family: 'Inter';
-    font-style: normal;
+}
+
+@media screen and (max-width: 767px) {
+    
+    .pop-up__input-error {
+        width: 242px;
+        
+    }
 }

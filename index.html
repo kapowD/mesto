@@ -9,7 +9,7 @@
 </head>
 
 <body class="page">
-  
+
   <header class="header">
     <img class="header__logo" alt="Логотип Mesto" src="./images/logo.svg">
   </header>
@@ -37,14 +37,16 @@
   <div class="pop-up pop-up-edit">
     <div class="pop-up__container">
       <button type="button" class="pop-up__exit"></button>
-      <form class="pop-up__form" name="edit" method="post" novalidate> <!-- работаем тут  form-edit -->
+      <form class="pop-up__form" name="edit" method="post" novalidate>
         <h2 class="pop-up__header">Редактировать профиль</h2>
 
-        <input type="text" class="pop-up__input pop-up__input_type_name" placeholder="Имя" name="name" id="name" minlength="2" maxlength="40" required>
-        <span class="name-error pop-up__input-error"></span><!-- работаем тут  form-edit -->
+        <input type="text" class="pop-up__input pop-up__input_type_name" placeholder="Имя" name="name" id="name"
+          minlength="2" maxlength="40" required>
+        <span class="name-error pop-up__input-error"></span>
 
-        <input type="text" class="pop-up__input pop-up__input_type_description" placeholder="О себе"  id="description" name="about" minlength="2" maxlength="200" required>
-        <span class="description-error pop-up__input-error"></span><!-- работаем тут  form-edit -->
+        <input type="text" class="pop-up__input pop-up__input_type_description" placeholder="О себе" id="description"
+          name="about" minlength="2" maxlength="200" required>
+        <span class="description-error pop-up__input-error"></span>
 
         <button class="pop-up__edit" type="submit">Сохранить</button>
       </form>
@@ -56,10 +58,12 @@
       <button type="button" class="pop-up__exit"></button>
       <form class="pop-up__form" name="editor" method="post" novalidate>
         <h2 class="pop-up__header">Новое место</h2>
-        <input type="text" class="pop-up__input pop-up__input_type_place" placeholder="Имя" name="Название" id="place" minlength="2" maxlength="30" required>
+        <input type="text" class="pop-up__input pop-up__input_type_place" placeholder="Имя" name="Название" id="place"
+          minlength="2" maxlength="30" required>
         <span class="place-error pop-up__input-error"></span>
 
-        <input type="url" class="pop-up__input pop-up__input_type_link" placeholder="Ссылка на картинку" name="about" id="url" required>
+        <input type="url" class="pop-up__input pop-up__input_type_link" placeholder="Ссылка на картинку" name="about"
+          id="url" required>
         <span class="url-error pop-up__input-error"></span>
 
         <button class="pop-up__edit" type="submit"> Создать</button>
