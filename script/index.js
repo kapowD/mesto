@@ -27,8 +27,8 @@ exitButton.forEach((button) => {
 });
 function openPopup(popup) {
     popup.classList.add('pop-up_opened');
-    popupEscClose(popup);
-    popupOverlayClose(popup);
+    document.addEventListener('keydown', popupEscClose);
+    popup.addEventListener('click', popupOverlayClose)
 }
 function closePopup(popup) {
     popup.classList.remove('pop-up_opened');
@@ -112,21 +112,16 @@ function editCardSubmitButtonState(button) {
 
 popupAdd.addEventListener('submit', handleAddSubmit);
 
-
-const popupEscClose = (popup) => {
-    document.addEventListener('keydown', (evt) => {
-        if (evt.key === 'Escape') {
-            closePopup(popup);
-        }
-    });
+const popupEscClose = (evt) => {
+    const popupOpen = document.querySelector('.pop-up_opened');
+    if (evt.key === 'Escape') {
+        closePopup(popupOpen);
+    }
 };
 
-const popupOverlayClose = (popup) => {
-
-    popup.addEventListener('click', (evt) => {
-        if (evt.currentTarget === evt.target) {
-            closePopup(popup);
-        }
-    });
-
+const popupOverlayClose = (evt) => {
+    const popupOpen = document.querySelector('.pop-up_opened');
+    if (evt.currentTarget === evt.target) {
+        closePopup(popupOpen);
+    }
 };
