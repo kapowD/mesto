@@ -21,6 +21,8 @@ const profileDescription = document.querySelector('.profile__description');
 const profileName = document.querySelector('.profile__name');
 const exitButton = document.querySelectorAll('.pop-up__exit');
 
+const popups = document.querySelectorAll(".pop-up");
+
 exitButton.forEach((button) => {
     const popup = button.closest('.pop-up');
     button.addEventListener('click', () => closePopup(popup));
@@ -28,12 +30,10 @@ exitButton.forEach((button) => {
 function openPopup(popup) {
     popup.classList.add('pop-up_opened');
     document.addEventListener('keydown', popupEscClose);
-    popup.addEventListener('click', popupOverlayClose)
 }
 function closePopup(popup) {
     popup.classList.remove('pop-up_opened');
     document.removeEventListener('keydown', popupEscClose);
-    popup.removeEventListener('click', popupOverlayClose)
 }
 
 editProfile.addEventListener('click', function () {
@@ -120,8 +120,12 @@ const popupEscClose = (evt) => {
 };
 
 const popupOverlayClose = (evt) => {
-    const popupOpen = document.querySelector('.pop-up_opened');
     if (evt.currentTarget === evt.target) {
-        closePopup(popupOpen);
+        closePopup(evt.currentTarget);
     }
 };
+function setPopupOverlayClose(popup) {
+    popup.addEventListener("click", popupOverlayClose);
+}
+
+popups.forEach(setPopupOverlayClose);
