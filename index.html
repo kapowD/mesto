@@ -34,7 +34,7 @@
     <p class="footer__text">© 2023 Mesto Russia</p>
   </footer>
 
-  <div class="pop-up pop-up-edit">
+  <section  class="pop-up pop-up-edit">
     <div class="pop-up__container">
       <button type="button" class="pop-up__exit"></button>
       <form class="pop-up__form" name="edit" method="post" novalidate>
@@ -51,9 +51,9 @@
         <button class="pop-up__edit" type="submit">Сохранить</button>
       </form>
     </div>
-  </div>
+  </section>
 
-  <div class="pop-up pop-up-add">
+  <section  class="pop-up pop-up-add">
     <div class="pop-up__container">
       <button type="button" class="pop-up__exit"></button>
       <form class="pop-up__form" name="editor" method="post" novalidate>
@@ -69,7 +69,7 @@
         <button class="pop-up__edit" type="submit"> Создать</button>
       </form>
     </div>
-  </div>
+  </section>
 
   <template id="elements-tameplate">
     <article class="element">
@@ -82,15 +82,15 @@
     </article>
   </template>
 
-  <div class="pop-up pop-up-image">
+  <section  class="pop-up pop-up-image">
     <div class="pop-up__image-container">
       <button class="pop-up__exit" type="button"></button>
       <img class="pop-up__image" alt="Попап изображения с краточки">
       <p class="pop-up__subtitle"></p>
     </div>
-  </div>
-  <script src="./script/validation.js" type="module"> </script>
-  <script src="./script/index.js" type="module"></script>
+  </section>
+  
+  <script type="module" src="./script/index.js" ></script>
 </body>
 
 </html>
