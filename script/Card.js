@@ -32,9 +32,13 @@ export class Card {
         this._element.remove();
     }
 
+    _handlerCardClick = () => {
+        this._popupOpen(this._cardData);
+    }
+
     _addEventListeners() {
         this._likeButton.addEventListener('click', () => this._handleLike());
         this._deleteButton.addEventListener('click', () => this._handleDelete());
-        this._elementImage.addEventListener('click', () => this._popupOpen(this._cardData));
+        this._elementImage.addEventListener('click', () => this._popupOpen(this._handlerCardClick));
     }
 };
