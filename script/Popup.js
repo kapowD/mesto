@@ -24,14 +24,14 @@ export default class Popup {
     _handleEscClose(event) {                              //закрытие по Esc
 
         if (event.key === 'Escape') {
-            const openedPopup = document.querySelector('pop-up_opened');
+            document.querySelector('pop-up_opened');
             this.closePopup();
         };
     };
 
     closePopupByOverlay(event) {                               //закрытие по клику
 
-        const openedPopup = document.querySelector('.pop-up_opened');
+        document.querySelector('.pop-up_opened');
 
         if (event.target === event.currentTarget) {
             this.closePopup();

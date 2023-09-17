@@ -7,16 +7,17 @@ export default class PopupWithImage extends Popup {
 
         this.zoomImage = this.popup.querySelector('.pop-up__image');
         this.zoomImageCaption = this.popup.querySelector('.pop-up__subtitle');
+        
     };
 
     openPopup(cardData) {
-
+        console.log(cardData);
         super.openPopup();
 
         this.zoomImage.src = cardData.link;
         this.zoomImageCaption.textContent = cardData.name;
         this.zoomImageCaption.alt = cardData.name;
-
+      
 
     }
 

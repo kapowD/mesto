@@ -34,11 +34,13 @@ export class Card {
 
     _handlerCardClick = () => {
         this._popupOpen(this._cardData);
+        console.log("a b c");
+        console.log(this._cardData);
     }
 
     _addEventListeners() {
         this._likeButton.addEventListener('click', () => this._handleLike());
         this._deleteButton.addEventListener('click', () => this._handleDelete());
-        this._elementImage.addEventListener('click', () => this._popupOpen(this._handlerCardClick));
+        this._elementImage.addEventListener('click', () => this._handlerCardClick());
     }
 };

@@ -6,6 +6,7 @@ import { Section } from './Section.js';
 import PopupWithForm from "./PopupWithForm.js";
 import PopupWithImage from "./PopupWithImage.js";
 import UserInfo from "./UserInfo.js"
+// const elementTemplate = document.getElementById('elements-tameplate').content;
 const elementsContainer = document.querySelector('.elements');
 const editProfile = document.querySelector('.profile__edit-button');
 const addCard = document.querySelector('.profile__add-button');
@@ -15,14 +16,17 @@ const inputDescription = popupEdit.querySelector('.pop-up__input_type_descriptio
 const popupAdd = document.querySelector('.pop-up-add');
 const inputPlace = popupAdd.querySelector('.pop-up__input_type_place');
 const inputLink = popupAdd.querySelector('.pop-up__input_type_link');
+// const popupSubmit = popupAdd.querySelector('.pop-up__edit');
 const profileDescription = document.querySelector('.profile__description');
 const profileName = document.querySelector('.profile__name');
 const exitButton = document.querySelectorAll('.pop-up__exit');
+
 const popups = document.querySelectorAll('.pop-up');
+// popups.forEach(setPopupOverlayClose); // сделать общей с exitButton
+
 const popupImage = document.querySelector('.pop-up-image');
 const popupPhoto = popupImage.querySelector('.pop-up__image'); // 
 const popupSubtitle = popupImage.querySelector('.pop-up__subtitle');
-
 
 
 const popupEditValidation = new FormValidator(objects, popupEdit);
@@ -40,7 +44,7 @@ addNewCard.setEventListeners();
 const imagePopup = new PopupWithImage('.pop-up-image');
 
 const profileInfo = new UserInfo('.profile__name', '.profile__description');
-console.log(profileInfo);
+// console.log(profileInfo);
 
 const openZoomImage = (cardData) => {
     imagePopup.openPopup(cardData);
@@ -63,8 +67,9 @@ const cardFormElement = document.querySelector('.popup-add-card');
 
 
 function openEditForm() {
-    editProfilePopup.openPopup(); //открытие формы редактирования
+    editProfilePopup.openPopup(); 
     const userData = profileInfo.getUserInfo();
+    console.log(userData);
     editProfilePopup.setInputValues(userData);
 };
 
