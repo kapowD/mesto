@@ -1,3 +1,4 @@
+import '../pages/index.css';
 import { Card } from './Card.js';
 import { initialCards, objects } from './constants.js'; // отследить за ипортом objects
 import { FormValidator } from './FormValidator.js';

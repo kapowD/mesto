@@ -1,7 +1,7 @@
 .element__delete-button{
     border: none;
     outline: none;
-    background: url(../../../../images/trash.png) center no-repeat;
+    background: url(../../../images/trash.png) center no-repeat;
     width: 18px;
     height: 19px;
     position: absolute;
