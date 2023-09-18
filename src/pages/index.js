@@ -1,13 +1,13 @@
 
 import '../pages/index.css';
-import { Card } from './Card.js';
-import { initialCards, objects } from './constants.js'; // отследить за ипортом objects
-import { FormValidator } from './FormValidator.js';
-import { Section } from './Section.js';
+import { Card } from '../components/Card.js';
+import { initialCards, objects } from '../utils/constants.js'; // отследить за ипортом objects
+import { FormValidator } from '../components/FormValidator.js';
+import { Section } from '../components/Section.js';
 
-import PopupWithForm from "./PopupWithForm.js";
-import PopupWithImage from "./PopupWithImage.js";
-import UserInfo from "./UserInfo.js"
+import PopupWithForm from "../components/PopupWithForm.js";
+import PopupWithImage from "../components/PopupWithImage.js";
+import UserInfo from "../components/UserInfo.js"
 // const elementTemplate = document.getElementById('elements-tameplate').content;
 const elementsContainer = document.querySelector('.elements');
 const editProfile = document.querySelector('.profile__edit-button');
