@@ -3,10 +3,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
     mode: 'development',
-    entry: { main: './script/index.js' },
+    entry: {
+        main: './script/index.js',
+    },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'main.js',
+        filename: '[name].[hash].js'
     },
     module: {
         rules: [
@@ -14,19 +16,32 @@ module.exports = {
                 test: /\.css$/,
                 use: [
                     MiniCssExtractPlugin.loader,
-                    { loader: 'css-loader' },
+                    {
+                        loader: 'css-loader'
+                    }
                 ]
             },
             {
-                test: /\.(svg|png|jpg|gif)$/,
+                test: /\.(png|jpg|jpeg|gif|svg)$/,
                 type: 'asset/resource',
+                generator:{
+                    filename: 'images/[name].[hash][ext]'
+                }
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/,
+                type: 'asset/resource',
+                generator:{
+                    filename: 'fonts/[name].[hash][ext]'
+                }
             },
         ]
-    },
+    }
+    ,
     plugins: [
         new HtmlWebpackPlugin({
-            template: './index.html' // путь к файлу index.html
+            template: './index.html',
         }),
         new MiniCssExtractPlugin(),
-    ],
-};
+    ]
+}
