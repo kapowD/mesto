@@ -36,7 +36,7 @@ const addNewCard = new PopupWithForm('.pop-up-add', handlerAddCardSubmit);
 addNewCard.setEventListeners();
 
 const imagePopup = new PopupWithImage('.pop-up-image');
-
+imagePopup.setEventListeners();
 const profileInfo = new UserInfo({ profileName: '.profile__name', profileDescription: '.profile__description'}); // (ﾉ◕ヮ◕)ﾉ
 
 const openZoomImage = (cardData) => {
