@@ -1,14 +1,13 @@
 
 import '../pages/index.css';
 import { Card } from '../components/Card.js';
-import { initialCards, objects } from '../utils/constants.js'; // отследить за ипортом objects
+import { initialCards, objects } from '../utils/constants.js'; 
 import { FormValidator } from '../components/FormValidator.js';
 import { Section } from '../components/Section.js';
 
 import PopupWithForm from "../components/PopupWithForm.js";
 import PopupWithImage from "../components/PopupWithImage.js";
 import UserInfo from "../components/UserInfo.js"
-// const elementTemplate = document.getElementById('elements-tameplate').content;
 const elementsContainer = document.querySelector('.elements');
 const editProfile = document.querySelector('.profile__edit-button');
 const addCard = document.querySelector('.profile__add-button');
@@ -18,17 +17,10 @@ const inputDescription = popupEdit.querySelector('.pop-up__input_type_descriptio
 const popupAdd = document.querySelector('.pop-up-add');
 const inputPlace = popupAdd.querySelector('.pop-up__input_type_place');
 const inputLink = popupAdd.querySelector('.pop-up__input_type_link');
-// const popupSubmit = popupAdd.querySelector('.pop-up__edit');
 const profileDescription = document.querySelector('.profile__description');
 const profileName = document.querySelector('.profile__name');
-const exitButton = document.querySelectorAll('.pop-up__exit');
-
-const popups = document.querySelectorAll('.pop-up');
-// popups.forEach(setPopupOverlayClose); // сделать общей с exitButton
-
 const popupImage = document.querySelector('.pop-up-image');
-const popupPhoto = popupImage.querySelector('.pop-up__image'); // 
-const popupSubtitle = popupImage.querySelector('.pop-up__subtitle');
+
 
 
 const popupEditValidation = new FormValidator(objects, popupEdit);
@@ -38,15 +30,14 @@ popupAddValidation.enableValidation();
 
 
 const editProfilePopup = new PopupWithForm('.pop-up-edit', submitEditProfileForm);
-
+editProfilePopup.setEventListeners();
 
 const addNewCard = new PopupWithForm('.pop-up-add', handlerAddCardSubmit);
 addNewCard.setEventListeners();
 
 const imagePopup = new PopupWithImage('.pop-up-image');
 
-const profileInfo = new UserInfo('.profile__name', '.profile__description');
-// console.log(profileInfo);
+const profileInfo = new UserInfo({ profileName: '.profile__name', profileDescription: '.profile__description'}); // (ﾉ◕ヮ◕)ﾉ
 
 const openZoomImage = (cardData) => {
     imagePopup.openPopup(cardData);
@@ -64,24 +55,16 @@ const cardList = new Section({
 
 cardList.renderItems();
 
-const profileFormElement = document.querySelector('.popup-edit-profile');
-const cardFormElement = document.querySelector('.popup-add-card');
-
-
 function openEditForm() {
     editProfilePopup.openPopup(); 
     const userData = profileInfo.getUserInfo();
-    console.log(userData);
     editProfilePopup.setInputValues(userData);
 };
 
 function submitEditProfileForm(event) {
     event.preventDefault();
 
-    profileInfo.setUserInfo({
-        name: profileName.value,
-        description: profileDescription.value
-    });
+   profileInfo.setUserInfo(editProfilePopup.getInputValues())
 
     editProfilePopup.setEventListeners();
     editProfilePopup.closePopup();
@@ -89,15 +72,9 @@ function submitEditProfileForm(event) {
 
 function handlerAddCardSubmit(event) {                       //сохранение карточки
     event.preventDefault();
-    const name = inputPlace.value;
-    const link = inputLink.value;
-    const inputs = Array.from(event.target.querySelectorAll('.pop-up__input'));
-    const button = event.target.querySelector('.pop-up__edit');
+    addNewCard.getInputValues()
 
-    const cardData = {
-        name: inputPlace.value,
-        link: inputLink.value
-    };
+    const cardData = addNewCard.getInputValues();
 
     const card = new Card(cardData, '#elements-tameplate', openZoomImage);
     const cardElement = card.generateCard();

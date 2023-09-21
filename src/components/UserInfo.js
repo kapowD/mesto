@@ -1,12 +1,8 @@
 export default class UserInfo {
 
     constructor({ profileName, profileDescription }) {
-
-        this.profileName = document.querySelector('.profile__name');
-        this.profileDescription = document.querySelector('.profile__description');
-
-        this.editPopup = document.querySelector('.pop-up-edit');
-        this.inputList = Array.from(this.editPopup.querySelectorAll('.pop-up__input'));
+        this.profileName = document.querySelector(profileName);
+        this.profileDescription = document.querySelector(profileDescription);
     }
 
     getUserInfo() {
@@ -18,10 +14,8 @@ export default class UserInfo {
     }
 
     setUserInfo(data) {
-
-        this.profileName.textContent = document.querySelector('.pop-up__input_type_name').value;
-        this.profileDescription.textContent = document.querySelector('.pop-up__input_type_description').value;
-
+        this.profileName.textContent = data.name;
+        this.profileDescription.textContent = data.description;
     }
 
 
